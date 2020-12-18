@@ -1,12 +1,11 @@
-.idea
-.iml
-target/
-out/
+wechat-mini-program-design/.idea/**
+*.iml
+wechat-mini-program-design/target/**
 project.config.json
 
 !pom.xml
-!**/src/main/**
-!**/src/test/**
+!wechat-mini-program-design/src/main/**
+!wechat-mini-program-design/src/test/**
 
 # Compiled class file
 *.class
@@ -22,3 +21,4 @@ project.config.json
 *.zip
 *.tar.gz
 *.rar
+
