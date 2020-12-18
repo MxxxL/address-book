@@ -1,0 +1,45 @@
+<!--pages/register/register.wxml-->
+<view class="container">
+    <view class="login-icon">
+        <image class="login-img" src="../../img/背景图.jpg"></image>
+    </view>
+    <form class="login-from">
+        <!--账号-->
+        <view class="inputView">
+            <image class="nameImage" src="../../img/账号.png"></image>
+            <label class="loginLab">账号</label>
+            <input 
+             class="inputText"
+             bindinput='usernameInput'
+             placeholder="请输入账号" />
+        </view>
+        <view class="line"></view>
+        <!--密码-->
+        <view class="inputView">
+            <image class="keyImage" src="../../img/密码.png"></image>
+            <label class="loginLab">密码</label>
+            <input 
+             class="inputText" 
+             bindinput='passwordInput'
+             password="true" 
+             placeholder="请输入密码" />
+        </view>
+        <view class="line"></view>
+        <!--确认密码-->
+        <view class="inputView">
+            <image class="keyImage" src="../../img/密码.png"></image>
+            <label class="loginLab">确认密码</label>
+            <input 
+             class="inputText" 
+             bindinput='rpasswordInput'
+             password="true" 
+             placeholder="再次确认密码" />
+        </view>
+
+        <!--按钮-->
+        <view class="loginBtnView">
+            <button class="loginBtn" type="primary" bindtap="register">注册</button>
+        </view>
+    </form>
+
+</view>

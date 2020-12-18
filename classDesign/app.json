@@ -1,0 +1,32 @@
+{
+  "pages":[
+    "pages/login/login",
+    "pages/register/register",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "tabBar": {
+    "list": [
+      {
+        "selectedIconPath": "img/登录 (1).png",
+        "iconPath": "img/登录.png",
+        "pagePath": "pages/login/login",
+        "text": "登录"
+      },
+      {
+        "selectedIconPath": "img/注册 (1).png",
+        "iconPath": "img/注册.png",
+        "pagePath": "pages/register/register",
+        "text": "注册"
+      }
+    ]
+  },
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "个人通讯录",
+    "navigationBarTextStyle":"black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
