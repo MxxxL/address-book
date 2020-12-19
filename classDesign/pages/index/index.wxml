@@ -1,2 +1,36 @@
 <!--pages/index/index.wxml-->
-<text>pages/index/index.wxml</text>
+<view class="container">
+  <view class="title">联系人列表</view>
+  <view class="table">
+    <view class="tr bg-w">
+      <view class="th">序号</view>
+      <view class="th">姓名</view>
+      <view class="th op">操作</view>
+    </view>
+    <block wx:for="{{contacts}}" wx:key="id">
+      <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+        <view class="td">{{item.id}}</view>
+        <view class="td">{{item.name}}</view>
+        <view class="td op">
+          <view class="buttons">
+            <button bindtap="select">查看</button>
+            <button bindtap="edit">编辑</button>
+            <button bindtap="delete">删除</button>
+          </view>
+        </view>
+      </view>
+      <view class="tr" wx:else>
+        <view class="td">{{item.id}}</view>
+        <view class="td">{{item.name}}</view>
+        <view class="td op">
+          <view class="buttons">
+            <button bindtap="select">查看</button>
+            <button bindtap="edit">编辑</button>
+            <button bindtap="delete">删除</button>
+          </view>
+        </view>
+
+      </view>
+    </block>
+  </view>
+</view>

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
+ * 登录，注册控制器
  * @author mxxxl
  * @date 2020/12/17
  */
@@ -27,7 +28,6 @@ public class LoginController {
                           @RequestParam("password")String password){
         String codePassword = DigestUtils.md5DigestAsHex(password.getBytes());
         User user = userService.selectUser(username, codePassword);
-        System.out.println(user);
         return user != null;
     }
 

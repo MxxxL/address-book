@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 /**
+ * 用户实体类
  * @author mxxxl
  * @date 2020/12/17
  */
@@ -11,11 +12,8 @@ public class User implements Serializable {
 
     private static final long serialVersionUID = 1086192321241408967L;
 
-    /** 用户id */
     private Integer id;
-    /** 用户名 */
     private String username;
-    /** 密码 */
     private String password;
 
     public User() {

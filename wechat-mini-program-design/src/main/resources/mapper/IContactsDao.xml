@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kaiyu.dao.IContactsDao">
+
+    <select id="selectAllContacts" resultType="com.kaiyu.entity.Contacts">
+        select * from contacts
+        order by id asc
+    </select>
+
+    <select id="selectById" resultType="com.kaiyu.entity.Contacts" parameterType="integer">
+        select * from contacts
+        where id = #{id}
+    </select>
+
+    <insert id="saveContacts" parameterType="com.kaiyu.entity.Contacts">
+        insert into contacts(name,phone,email,address)
+        value (#{name},#{phone},#{email},#{address})
+    </insert>
+
+    <update id="editContacts">
+        update contacts
+        set name = #{name}, phone = #{phone}, email = #{email}, address = #{address}
+        where id = #{id}
+    </update>
+
+    <delete id="deleteContactsById">
+        delete from contacts
+        where id = #{id}
+    </delete>
+</mapper>
