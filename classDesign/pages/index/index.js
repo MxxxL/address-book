@@ -5,6 +5,18 @@ Page({
     contacts: []
   },
 
+  select:function(event){
+    let value = event.currentTarget.dataset.value
+    wx.navigateTo({
+      url: '../detail/detail'+'?id='+value
+    })
+  },
+  edit:function(){
+
+  },
+  delete:function(){
+
+  },
 
   //-------------------------------------------------//
   /**

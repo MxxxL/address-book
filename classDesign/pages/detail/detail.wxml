@@ -1,2 +1,27 @@
 <!--pages/detail/detail.wxml-->
-<text>pages/detail/detail.wxml</text>
+<view class="container">
+  <view class="title">详细信息</view>
+  <view class="info">
+    <view class="info-item">
+      <view class="info-title">序号</view>
+      <view class="info-content">{{contacts.id}}</view>
+    </view>
+    <view class="info-item">
+      <view class="info-title">姓名</view>
+      <view class="info-content">{{contacts.name}}</view>
+    </view>
+    <view class="info-item">
+      <view class="info-title">手机</view>
+      <view class="info-content">{{contacts.phone}}</view>
+    </view>
+    <view class="info-item">
+      <view class="info-title">邮箱</view>
+      <view class="info-content">{{contacts.email}}</view>
+    </view>
+    <view class="info-item">
+      <view class="info-title">住址</view>
+      <view class="info-content">{{contacts.address}}</view>
+    </view>
+
+  </view>
+</view>

@@ -13,9 +13,9 @@
         <view class="td">{{item.name}}</view>
         <view class="td op">
           <view class="buttons">
-            <button bindtap="select">查看</button>
-            <button bindtap="edit">编辑</button>
-            <button bindtap="delete">删除</button>
+            <button bindtap="select" data-value="{{item.id}}">查看</button>
+            <button bindtap="edit" data-value="{{item.id}}">编辑</button>
+            <button bindtap="delete" data-value="{{item.id}}">删除</button>
           </view>
         </view>
       </view>
@@ -24,9 +24,9 @@
         <view class="td">{{item.name}}</view>
         <view class="td op">
           <view class="buttons">
-            <button bindtap="select">查看</button>
-            <button bindtap="edit">编辑</button>
-            <button bindtap="delete">删除</button>
+            <button bindtap="select" data-value="{{item.id}}">查看</button>
+            <button bindtap="edit" data-value="{{item.id}}">编辑</button>
+            <button bindtap="delete" data-value="{{item.id}}">删除</button>
           </view>
         </view>
 

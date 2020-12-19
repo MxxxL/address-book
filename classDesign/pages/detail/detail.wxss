@@ -1,1 +1,44 @@
 /* pages/detail/detail.wxss */
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  box-sizing: border-box;
+  justify-content: flex-start;
+  /* background-color: rgb(156, 23, 78) */
+}
+
+.info {
+  margin-top: 20px;
+  border: 1px solid #f0f0f0;
+  width:90%;
+}
+
+.info-item{
+  display: flex;
+}
+/* .info-item:nth-child(n){
+  border-bottom: 1px solid #f0f0f0;
+} */
+
+.info-item:nth-last-child(n+2){
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.info-title {
+  padding: 10px 10px;
+  background-color: #fafafa;
+  border-right: 1px solid #f0f0f0;
+}
+
+.info-content {
+  background-color: #ffffff;
+  /* border-right: 1px solid #f0f0f0; */
+  padding: 10px 10px;
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center; */
+  align-items: center;
+  flex-grow: 1;
+}

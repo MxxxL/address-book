@@ -5,7 +5,9 @@ import com.kaiyu.entity.Contacts;
 import com.kaiyu.service.IContactsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.HashMap;
@@ -30,6 +32,17 @@ public class ContactsController {
         Map<Object,Object> map = new HashMap<>(16);
         List<Contacts> contacts = contactsService.selectAllContacts();
         map.put("msg","获取所有联系人信息");
+        map.put("code",200);
+        map.put("contacts",contacts);
+        return map;
+    }
+
+    @GetMapping("/select")
+    @ResponseBody
+    public Object selectContactsById(@RequestParam("id")Integer id){
+        Map<Object,Object> map = new HashMap<>(16);
+        Contacts contacts = contactsService.selectById(id);
+        map.put("msg","根据id查询联系人");
         map.put("code",200);
         map.put("contacts",contacts);
         return map;
