@@ -3,7 +3,7 @@ Page({
   data: {
     username: '',
     password: '',
-    rpassword:''
+    rpassword: ''
   },
   usernameInput: function (e) {
     this.setData({
@@ -27,12 +27,12 @@ Page({
         icon: 'none',
         duration: 2000
       })
-    }else if(this.data.password!=this.data.rpassword){
-        wx.showToast({
-          title: '密码与确认密码不一致',
-          icon:'none',
-          duration:2000
-        })
+    } else if (this.data.password != this.data.rpassword) {
+      wx.showToast({
+        title: '密码与确认密码不一致',
+        icon: 'none',
+        duration: 2000
+      })
     } else {
       console.log("注册获取的参数：" + this.data.username + "," + this.data.password)
       wx.request({
@@ -47,28 +47,44 @@ Page({
         },
         success(res) {
           console.log("回调函数:" + res.data)
-          var resData = res.data;
-          if (resData == true) {
-            wx.showToast({ 
+          if (res.data.code == 200) {
+            wx.showModal({
               title: '注册成功',
-              icon: 'success',
-              duration: 2000,
-              success: function () {
-                wx.navigateTo({
-                  url: '../login/login',
-                })
+              showCancel: false,
+              // content: '这是一个模态弹窗',
+              success(res) {
+                if (res.confirm) {
+                  console.log('用户点击确定')
+                  wx.navigateBack({
+                    delta: 1
+                  })
+                } else if (res.cancel) {
+                  console.log('用户点击取消')
+                }
               }
             })
-          } else {
-            wx.showToast({
+          }
+        },
+        fail(res) {
+          if (res.data.code != 200) {
+            wx.showModal({
               title: '注册失败',
-              icon: 'none',
-              duration: 2000,
+              showCancel: false,
+              content: res.data.msg,
+              success(res) {
+                if (res.confirm) {
+                  console.log('用户点击确定')
+                  wx.navigateBack({
+                    delta: 1
+                  })
+                } else if (res.cancel) {
+                  console.log('用户点击取消')
+                }
+              }
             })
           }
         }
       })
     }
   }
-
 })

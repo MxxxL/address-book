@@ -1,2 +1,35 @@
 <!--pages/save/save.wxml-->
-<text>pages/save/save.wxml</text>
+<view class="container">
+  <view class="title">新增信息</view>
+  <form  bindsubmit="save">
+    <view class="info">
+      <view class="info-item">
+        <view class="info-title">姓名</view>
+        <view class="info-content">
+          <input name="name" maxlength="6"/>
+        </view>
+      </view>
+      <view class="info-item">
+        <view class="info-title">手机</view>
+        <view class="info-content">
+          <input name="phone" maxlength="11" />
+        </view>
+      </view>
+      <view class="info-item">
+        <view class="info-title">邮箱</view>
+        <view class="info-content">
+          <input name="email" />
+        </view>
+      </view>
+      <view class="info-item">
+        <view class="info-title">住址</view>
+        <view class="info-content">
+          <input name="address" />
+        </view>
+      </view>
+    </view>
+
+    <button class="btnSave" form-type="submit">提交</button>
+  </form>
+
+</view>

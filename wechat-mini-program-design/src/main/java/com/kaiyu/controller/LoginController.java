@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * 登录，注册控制器
  * @author mxxxl
@@ -24,20 +27,38 @@ public class LoginController {
 
     @PostMapping("/login")
     @ResponseBody
-    public boolean doLogin(@RequestParam("username")String username,
+    public Object doLogin(@RequestParam("username")String username,
                           @RequestParam("password")String password){
+        Map<Object,Object> map = new HashMap<>(16);
         String codePassword = DigestUtils.md5DigestAsHex(password.getBytes());
         User user = userService.selectUser(username, codePassword);
-        return user != null;
+
+        if (user!=null){
+            map.put("msg","登录成功");
+            map.put("code",200);
+        }else {
+            map.put("msg","登录失败");
+            map.put("code",400);
+        }
+
+        return map;
     }
 
     @RequestMapping("register")
     @ResponseBody
-    public boolean doRegister(@RequestParam("username")String username,
+    public Object doRegister(@RequestParam("username")String username,
                               @RequestParam("password")String password){
+        Map<Object,Object> map = new HashMap<>(16);
         String codePassword = DigestUtils.md5DigestAsHex(password.getBytes());
         User user = new User(username,codePassword);
         int result = userService.saveUser(user);
-        return result > 0;
+        if (result>0){
+            map.put("msg","注册成功");
+            map.put("code",200);
+        }else {
+            map.put("msg","注册失败，数据异常");
+            map.put("code",400);
+        }
+        return map;
     }
 }

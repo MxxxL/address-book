@@ -31,7 +31,7 @@ page {
 .inputView {
   /* background-color: #fff;  */
   line-height: 40px;
-  border-radius: 20px;
+  border-radius: 10px;
   border: 1px solid #999999;
 }
 
@@ -81,7 +81,9 @@ page {
 }
 
 .loginBtn {
-  width: 90%;
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
   margin-top: 10px;
   border-radius: 10px;
 }

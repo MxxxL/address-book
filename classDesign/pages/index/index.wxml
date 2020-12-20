@@ -1,6 +1,7 @@
 <!--pages/index/index.wxml-->
 <view class="container">
   <view class="title">联系人列表</view>
+  <button class="logout" bindtap="logout">退出登录</button>
   <view class="table">
     <view class="tr bg-w">
       <view class="th">序号</view>
@@ -29,8 +30,11 @@
             <button bindtap="delete" data-value="{{item.id}}">删除</button>
           </view>
         </view>
-
       </view>
     </block>
+  </view>
+
+  <view>
+    <button class="btnSave" bindtap="save">新增联系人</button>
   </view>
 </view>

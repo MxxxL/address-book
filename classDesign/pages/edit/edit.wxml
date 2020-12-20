@@ -1,2 +1,40 @@
 <!--pages/edit/edit.wxml-->
-<text>pages/edit/edit.wxml</text>
+<view class="container">
+  <view class="title">修改信息</view>
+  <form  bindsubmit="edit">
+    <view class="info">
+      <view class="info-item">
+        <view class="info-title">序号</view>
+        <input name="id" disabled="true" class="info-content" value="{{contacts.id}}" />
+          
+      </view>
+      <view class="info-item">
+        <view class="info-title">姓名</view>
+        <view class="info-content">
+          <input name="name" value="{{contacts.name}}" maxlength="6" />
+        </view>
+      </view>
+      <view class="info-item">
+        <view class="info-title">手机</view>
+        <view class="info-content">
+          <input name="phone" value="{{contacts.phone}}" maxlength="11" />
+        </view>
+      </view>
+      <view class="info-item">
+        <view class="info-title">邮箱</view>
+        <view class="info-content">
+          <input name="email" value="{{contacts.email}}" />
+        </view>
+      </view>
+      <view class="info-item">
+        <view class="info-title">住址</view>
+        <view class="info-content">
+          <input name="address" value="{{contacts.address}}" />
+        </view>
+      </view>
+    </view>
+
+    <button class="btnEdit" form-type="submit">修改</button>
+  </form>
+
+</view>
