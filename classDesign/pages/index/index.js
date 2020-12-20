@@ -23,41 +23,55 @@ Page({
     })
   },
   delete: function (event) {
-    let value = event.currentTarget.dataset.value
-    wx.request({
-      url: 'http://localhost:8080/contacts/delete?id=' + value,
-      header: {
-        'content-type': 'application/x-www-form-urlencoded'
-      },
-      method: 'get',
-      success: function (res) {
-        if (res.data.msg == "ok") {
-          wx.showToast({
-            title: '删除信息成功！',
-            icon: 'none',
-            duration: 2000,
+    const that = this
+    wx.showModal({
+      title: '确认要删除吗？',
+      confirmColor: '#CC0000',
+      success(res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+          let value = event.currentTarget.dataset.value
+          wx.request({
+            url: 'http://localhost:8080/contacts/delete?id=' + value,
+            header: {
+              'content-type': 'application/x-www-form-urlencoded'
+            },
+            method: 'get',
+            success: function (res) {
+              if (res.data.msg == "ok") {
+                wx.showToast({
+                  title: '删除信息成功！',
+                  icon: 'none',
+                  duration: 2000,
+                })
+                that.onShow()
+              }
+            },
+            fail: function (res) {
+              if (res.data.msg != "ok") {
+                wx.showToast({
+                  title: '删除取信息失败！',
+                  icon: 'none',
+                  duration: 2000,
+                })
+              }
+            }
           })
-          this.onLoad()
-        }
-      },
-      fail: function (res) {
-        if (res.data.msg != "ok") {
-          wx.showToast({
-            title: '删除取信息失败！',
-            icon: 'none',
-            duration: 2000,
-          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+
         }
       }
     })
+
   },
 
-  logout:function(){
+  logout: function () {
     wx.removeStorage({
       key: 'loginUser',
-      success (res) {
-        wx.navigateBack({
-          delta: 10,
+      success(res) {
+        wx.redirectTo({
+          url:'../login/login'
         })
       }
     })
@@ -109,6 +123,9 @@ Page({
 
       }
     })
-  }
+  },
 
+  onShow: function(options){
+    this.onLoad()
+  }
 })

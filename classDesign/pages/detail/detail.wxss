@@ -42,3 +42,8 @@
   align-items: center;
   flex-grow: 1;
 }
+
+.back{
+  margin-top: 20px;
+  width: 50%;
+}

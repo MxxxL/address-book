@@ -22,8 +22,9 @@
       <view class="info-title">住址</view>
       <view class="info-content">{{contacts.address}}</view>
     </view>
-    <view>
-      <button bindtap="back">返回</button>
-    </view>
+
   </view>
+
+  <button class="back" bindtap="back">返回</button>
+
 </view>

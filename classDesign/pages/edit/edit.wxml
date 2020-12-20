@@ -5,7 +5,8 @@
     <view class="info">
       <view class="info-item">
         <view class="info-title">序号</view>
-        <input name="id" disabled="true" class="info-content" value="{{contacts.id}}" />
+        <input
+         name="id" disabled="true" class="info-content disable" value="{{contacts.id}}" />
           
       </view>
       <view class="info-item">
@@ -33,7 +34,7 @@
         </view>
       </view>
     </view>
-
+    <view style="margin-top:10px;color:#999">* 点击信息修改</view>
     <button class="btnEdit" form-type="submit">修改</button>
   </form>
 

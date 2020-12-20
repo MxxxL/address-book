@@ -48,7 +48,7 @@ Page({
               icon: 'success',
               duration: 2000,
               success: function () {
-                wx.navigateTo({
+                wx.redirectTo({
                   url: '../index/index',
                 })
               }
@@ -94,7 +94,7 @@ Page({
           },
           success(res) {
             if (res.data.code == 200) {
-              wx.navigateTo({
+              wx.redirectTo({
                 url: '../index/index',
               })
             }
@@ -111,5 +111,9 @@ Page({
     } catch (e) {
       // Do something when catch error
     }
+  },
+
+  onShow:function(options){
+    this.onLoad()
   }
 })

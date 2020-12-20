@@ -9,9 +9,9 @@
   /* background-color: rgb(156, 23, 78) */
 }
 
-form{
-  margin:0;
-  padding:0;
+form {
+  margin: 0;
+  padding: 0;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -20,18 +20,19 @@ form{
 .info {
   margin-top: 20px;
   border: 1px solid #f0f0f0;
-  width:100%;
+  width: 100%;
   flex-grow: 1;
 }
 
-.info-item{
+.info-item {
   display: flex;
 }
+
 /* .info-item:nth-child(n){
   border-bottom: 1px solid #f0f0f0;
 } */
 
-.info-item:nth-last-child(n+2){
+.info-item:nth-last-child(n+2) {
   border-bottom: 1px solid #f0f0f0;
 }
 
@@ -52,9 +53,13 @@ form{
   flex-grow: 1;
 }
 
-.btnEdit{
+.btnEdit {
   margin-top: 50px;
   width: 50%;
   color: #ffffff;
   background: #06ad56;
+}
+
+.disable {
+  background: #f0f0f0;
 }

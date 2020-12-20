@@ -22,8 +22,8 @@ Page({
             icon: 'none',
             duration: 2000
           })
-          wx.navigateTo({
-            url: '../index/index',
+          wx.navigateBack({
+            delta: 1
           })
         }
       },
